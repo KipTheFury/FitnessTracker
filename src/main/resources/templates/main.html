@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html layout:decorate="~{fragments/layout}" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fitness Tracker</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+    <h1>Fitness Tracker</h1>
+
+    <div th:switch="${activities}">
+
+        <h2 th:case="${#lists.isEmpty(activities)}">No activities yet!</h2>
+
+        <th:block th:case="*">
+            <h2>Recent Activities</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <td>Date</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="activity : ${activities}">
+                    <td th:text="${activity.date}"/>
+                </tr>
+                </tbody>
+            </table>
+        </th:block>
+    </div>
+</div>
+</body>
+</html>
