@@ -18,11 +18,13 @@
                 <thead>
                 <tr>
                     <td>Date</td>
+                    <td>Type</td>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="activity : ${activities}">
                     <td th:text="${activity.date}"/>
+                    <td th:text="${activity.type}"/>
                 </tr>
                 </tbody>
             </table>
