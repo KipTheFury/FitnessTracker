@@ -2,7 +2,7 @@ package com.kb.fitnesstracker.controller;
 
 import com.kb.fitnesstracker.model.Run;
 import com.kb.fitnesstracker.service.ActivityService;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.time.LocalDate;
 
 @Controller
-@Log4j
+@Slf4j
 public class MainController {
 
     @Autowired
